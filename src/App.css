@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  background-color:#EFF1F7;
+  color:#373D50 ;
+ 
 }
 
 .App-logo {
@@ -7,21 +10,105 @@
   pointer-events: none;
 }
 
+/*añadidos*/
+.todo-element{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.congrats-msg{
+  display: none;  
+  font-weight: bold;
+}
+.error-input{
+  display: none;
+  color:red;
+}
+.button-styles{
+  margin-top: 20px;
+  background-color: #CADEE2 ;
+  border-color:#CADEE2 ;
+  color:#373D50 ;
+  border-radius: 2px;
+  padding: 10px 30px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.header-styles{
+  width: 100vw;
+  height: 50vh;
+  background-image: url('./images/banner.jpg');;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: -200px;
+}
+.enter-tasks-block{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.info{
+  color: #3A4976;
+  font-weight: bold;
+ }
+ .footer-styles{
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: center;
+   background-color:darkslategrey;
+   color:white;
+   font-weight: bold;
+   font-size: large;
+   height: 20vh;
+   width: 100vw;
+ }
+ .button-print{
+   border-radius: 700px;
+ }
+ .buttons-group{
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+  justify-content:center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+ }
+
+@media only screen and (max-width: 768px) {
+  .header-styles{
+    width: 100vw;
+    height: 50vh;
+    background-image: url('./images/banner.jpg');;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: 0px !important;
+    background-position-x: -50px
+    
+  }
+  .enter-tasks-block{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .info{
+   
+    padding:10px;
+  }
+  
+  img{
+    width:auto;
+    height: 50vh;
+  }
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
 .App-link {

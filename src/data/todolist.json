@@ -1,0 +1,26 @@
+[
+    {
+        "id":1,
+        "title":"Hacer la compra",
+        "completed": false
+
+    },
+    {
+        "id":2,
+        "title":"Asistir cita médica",
+        "completed": true
+
+    },
+    {
+        "id":3,
+        "title":"Recoger niños en el cole",
+        "completed": false
+
+    },
+    {
+        "id":4,
+        "title":"Sacar a pasear al perro",
+        "completed": true
+
+    }
+ ]
