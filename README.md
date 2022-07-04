@@ -10,7 +10,7 @@ Para acceder a la página: https://bealazo.github.io/todo-list/
 
 ## Tech Stack
 
-**Client:** Reactjs, Jest
+**Client:** Reactjs, Jest para pruebas unitarias
 
 ## Authors
 
