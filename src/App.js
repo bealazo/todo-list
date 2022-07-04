@@ -63,11 +63,11 @@ function App() {
       setTasks(tasks => [...tasks, task]);
       document.querySelector(".error-input").style.display='none';
       document.querySelector("#outlined-basic").value="";
-    }
+     }
     else{
       document.querySelector(".error-input").style.display='block';
     }   
-    }
+  }
 
   const handleClickCheckBox=(task,index)=>{  
     let mycheck= document.querySelector(`#id-${index}`);
@@ -98,6 +98,7 @@ function App() {
         if(countertaskscompleted===tasks.length){
           setDoneTasks(tasks)
           setTasks([]);
+          setSelectedTime(new Date())
           document.querySelector(".congrats-msg").style.display='block';
          document.querySelector(".enter-tasks-block").style.display='none';
         }
