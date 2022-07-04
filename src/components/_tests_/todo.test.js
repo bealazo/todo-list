@@ -2,6 +2,7 @@ import React from "react";
 import {render, screen,cleanup} from "@testing-library/react";
 import renderer from "react-test-renderer";
 import Todo from "../todo";
+import TimePicker from "../time_picker";
 
 //Luego de cada test se limpia
 afterEach(()=>{
@@ -12,33 +13,47 @@ cleanup();
 
 test("Debe renderizar todos no completados",()=>{
     //creo una constante con el valor de uno de los todos completados
-    const todo= {id:1, title:"Hacer la compra",completed: false};
+    const todo= {id:0, title:"Hacer la compra---10:20AM",completed: false};
+    //renderizo el componente
+   render(<Todo todo={todo}/>);
+   //obtengo el componente por el id asignado en el atributo data-testid
+   const todoElement=screen.getByTestId("todo-0");
+   //se espera que el elemento anterior este en el dom pregunto con el matcher toBeInTheDocument
+   expect(todoElement).toBeInTheDocument();
+   expect(todoElement).toHaveTextContent("1-)Hacer la compra---10:20AM");
+   expect(todoElement).not.toContainHTML("strike");
+})
+test("Debe renderizar todos completados",()=>{
+    //creo una constante con el valor de uno de los todos completados
+    const todo= {id:1, title:"Asistir cita médica---12:20PM",completed: true};
     //renderizo el componente
    render(<Todo todo={todo}/>);
    //obtengo el componente por el id asignado en el atributo data-testid
    const todoElement=screen.getByTestId("todo-1");
    //se espera que el elemento anterior este en el dom pregunto con el matcher toBeInTheDocument
    expect(todoElement).toBeInTheDocument();
-   expect(todoElement).toHaveTextContent("Hacer la compra");
-   expect(todoElement).not.toContainHTML("strike");
-})
-test("Debe renderizar todos completados",()=>{
-    //creo una constante con el valor de uno de los todos completados
-    const todo= {id:2, title:"Asistir cita médica",completed: true};
-    //renderizo el componente
-   render(<Todo todo={todo}/>);
-   //obtengo el componente por el id asignado en el atributo data-testid
-   const todoElement=screen.getByTestId("todo-2");
-   //se espera que el elemento anterior este en el dom pregunto con el matcher toBeInTheDocument
-   expect(todoElement).toBeInTheDocument();
-   expect(todoElement).toHaveTextContent("Asistir cita médica");
+   expect(todoElement).toHaveTextContent("2-)Asistir cita médica---12:20PM");
    expect(todoElement).toContainHTML("strike");
+})
+test("Debe renderizar timepicker",()=>{
+    const selectedTime= '2022-06-18T21:11:54';
+    const handleTimeChange = (date) => {
+        setSelectedTime(date);    
+     };
+   
+    //renderizo el componente
+   render(<TimePicker selectedTime={selectedTime} handleTimeChange={handleTimeChange}/>);
+   //obtengo el componente por el id asignado en el atributo data-testid
+   const timeElement=screen.getByTestId("time-picker-t");
+   //se espera que el elemento anterior este en el dom pregunto con el matcher toBeInTheDocument
+   expect(timeElement).toBeInTheDocument();
+  
 })
 //end unit tests
 
 //Se pueden usar snapshots, es una manera mas automatizada de verificar que el componente no cambio desde que se ejecutaron las pruebas
  test("matches snapshot",()=>{
-    const todo= {id:1, title:"Hacer la compra",completed: false};
+    const todo= {id:1, title:"Hacer la compra---10:20AM",completed: false};
     const tree= renderer.create(<Todo todo={todo}/>).toJSON();
     expect(tree).toMatchSnapshot();
 }) 

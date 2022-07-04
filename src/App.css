@@ -25,14 +25,9 @@
   color:red;
 }
 .button-styles{
-  margin-top: 20px;
-  background-color: #CADEE2 ;
-  border-color:#CADEE2 ;
-  color:#373D50 ;
-  border-radius: 2px;
-  padding: 10px 30px;
-  font-weight: bold;
+  margin-top: 100px; 
   margin-bottom: 20px;
+  color:red;
 }
 
 .header-styles{

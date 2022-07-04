@@ -5,7 +5,7 @@ exports[`matches snapshot 1`] = `
   data-testid="todo-1"
 >
   <h3>
-    Hacer la compra
+    2-)Hacer la compra---10:20AM
   </h3>
 </div>
 `;

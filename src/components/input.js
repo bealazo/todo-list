@@ -1,10 +1,12 @@
 import React from "react";
+import TextField from '@material-ui/core/TextField';
 
 const Input=({handleChange,handleBlur})=>{
 
       return(
         <div>
-            <input type="text" min-width="600px" onChange={handleChange} onBlur={handleBlur}></input>
+             <TextField id="outlined-basic" label="Escriba su tarea" variant="outlined" onChange={handleChange} onBlur={handleBlur}/>
+           
         </div>
     )
 
