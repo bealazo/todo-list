@@ -16,7 +16,7 @@ function App() {
   const[tasks, setTasks]=React.useState([]);
   const[donetasks, setDoneTasks]=React.useState([]);
   const[count, setCount]=React.useState(0);   
-
+  
   const handleChange=(e)=>{
         setTaskTitle(e.target.value);
      
@@ -41,30 +41,35 @@ function App() {
 
   const handleClickCheckBox=(task,index)=>{  
     let mycheck= document.querySelector(`#id-${index}`);
-         let taskitem={
+        let taskitem={
         id:task.id,
         title:task.title,
         completed:mycheck.checked
       }
       setTask(taskitem);
-      let countertaskscompleted=0;
-      tasks.map((item,index)=>{
-        let taskstemp=tasks;
       
-        if(item.id==task.id){
+      let taskstemp=tasks;
+
+      tasks.map((item,index)=>{
+          
+        if(item.id===task.id){
           taskstemp[index]=taskitem;
           setTasks(taskstemp)
         }
+       
+      })   
 
-        if(item.completed){
+      let countertaskscompleted=0;
+
+      taskstemp.map((item)=>{       
+          if(item.completed){
           countertaskscompleted++;
         }
-        if(countertaskscompleted==tasks.length-1){
+        if(countertaskscompleted===tasks.length){
           setDoneTasks(tasks)
           setTasks([]);
-         document.querySelector(".congrats-msg").style.display='block';
+          document.querySelector(".congrats-msg").style.display='block';
          document.querySelector(".enter-tasks-block").style.display='none';
-
         }
       
       })   
@@ -77,7 +82,7 @@ function App() {
   }
 
   //Para generar el pdf de la lista de tareas
-  const generatePDF = () => {
+  const  generatePDF = () => {
     var doc = new jsPDF('p', 'pt');
     
     tasks.map((task,index)=>{
