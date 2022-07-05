@@ -2,7 +2,6 @@ import React from "react";
 import {render, screen,cleanup} from "@testing-library/react";
 import renderer from "react-test-renderer";
 import Todo from "../todo";
-import TimePicker from "../time_picker";
 
 //Luego de cada test se limpia
 afterEach(()=>{
@@ -35,21 +34,7 @@ test("Debe renderizar todos completados",()=>{
    expect(todoElement).toHaveTextContent("2-)Asistir cita médica---12:20PM");
    expect(todoElement).toContainHTML("strike");
 })
-test("Debe renderizar timepicker",()=>{
-    const selectedTime= '2022-06-18T21:11:54';
-    const handleTimeChange = (date) => {
-        setSelectedTime(date);    
-     };
-   
-    //renderizo el componente
-   render(<TimePicker selectedTime={selectedTime} handleTimeChange={handleTimeChange}/>);
-   //obtengo el componente por el id asignado en el atributo data-testid
-   const timeElement=screen.getByTestId("time-picker-t");
-   //se espera que el elemento anterior este en el dom pregunto con el matcher toBeInTheDocument
-   expect(timeElement).toBeInTheDocument();
-  
-})
-//end unit tests
+
 
 //Se pueden usar snapshots, es una manera mas automatizada de verificar que el componente no cambio desde que se ejecutaron las pruebas
  test("matches snapshot",()=>{
