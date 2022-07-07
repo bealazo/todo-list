@@ -12,6 +12,10 @@ Para acceder a la página: https://bealazo.github.io/todo-list/
 
 **Client:** Reactjs, Jest para pruebas unitarias
 
+## Screenshots
+
+![App Screenshot](https://bealazo.github.io/portfolio/images/pic-14.png)
+
 ## Authors
 
 - [@bealazo](https://github.com/bealazo)
