@@ -1,7 +1,7 @@
 
 # Todo  list
 
-Página web que permite agregar y eliminar una serie de tareas diarias por hora. Cada tarea se puede ir marcando como completada.
+Página web que permite agregar una serie de tareas diarias por hora. Estas tareas se mostrarán en un listado, del cual se pueden eliminar si se introdujo alguna tarea incorrectamente o se puede ir marcando cada una como completada.
 Permite además exportar la lista de tareas en formato PDF y enviar la lista por Whatsapp
 
 ## Demo
