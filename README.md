@@ -1,7 +1,7 @@
 
 # Todo  list
 
-Página web que permite agregar una serie de tareas a hacer, irlas marcando como completadas.
+Página web que permite agregar y eliminar una serie de tareas diarias por hora. Cada tarea se puede ir marcando como completada.
 Permite además exportar la lista de tareas en formato PDF y enviar la lista por Whatsapp
 
 ## Demo
